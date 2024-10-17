@@ -1,0 +1,13 @@
+.container {
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--primary);
+  display: flex;
+  flex-direction: row;
+}
+.leftContents {
+  width: 100%;
+}
+.rightContents {
+  width: 100%;
+}

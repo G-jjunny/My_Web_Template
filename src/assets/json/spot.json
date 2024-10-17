@@ -1,0 +1,37 @@
+[
+  {
+    "id": 1,
+    "line": 70,
+    "image": "spot70.jpg"
+  },
+  {
+    "id": 2,
+    "line": 90,
+    "image": "spot90.jpg"
+  },
+  {
+    "id": 3,
+    "line": 125,
+    "image": "spot125.jpg"
+  },
+  {
+    "id": 4,
+    "line": 150,
+    "image": "spot150.png"
+  },
+  {
+    "id": 5,
+    "line": 165,
+    "image": "spot165.jpg"
+  },
+  {
+    "id": 6,
+    "line": 190,
+    "image": "spot190.jpg"
+  },
+  {
+    "id": 7,
+    "line": 240,
+    "image": "spot240.png"
+  }
+]

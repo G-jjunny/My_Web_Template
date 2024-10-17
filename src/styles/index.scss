@@ -1,0 +1,9 @@
+@import "./reset.scss";
+
+body {
+  font-family: "Poppins", "Noto Sans KR", serif;
+  box-sizing: border-box;
+}
+::-webkit-scrollbar {
+  display: none;
+}

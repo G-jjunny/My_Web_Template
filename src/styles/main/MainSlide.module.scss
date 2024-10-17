@@ -1,0 +1,37 @@
+.container {
+  width: 100vw;
+  height: 100vh;
+  background-image: url("../../assets/banner2.jpg");
+  animation: backgroundFocus 2s ease-in-out;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+}
+.layer {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color: var(--black);
+  animation: fadeIn 1s ease-in;
+  animation-delay: 2s;
+  opacity: 0.5;
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes backgroundFocus {
+  0% {
+    background-size: 150%;
+  }
+  100% {
+    background-size: 100%;
+  }
+}

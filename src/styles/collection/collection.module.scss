@@ -1,0 +1,51 @@
+.container {
+  width: 100vw;
+  background-color: var(--primary);
+  min-height: 100vh;
+}
+
+.wrapper {
+  width: 100%;
+  max-width: 1100px;
+  margin: 100px auto;
+  display: flex;
+  flex-direction: column;
+}
+.title {
+  font-size: var(--font-xl);
+  font-weight: 600;
+}
+.itemCount {
+  text-align: end;
+  font-size: var(--font-md);
+  font-weight: 500;
+}
+.options {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  font-size: var(--font-sm);
+}
+.options::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  background-color: var(--black);
+  border: 2px solid var(--primary-dark);
+}
+.filter {
+  font-weight: 700;
+}
+
+.optionBtn {
+  border: 2px solid var(--primary-dark);
+  font-size: var(--font-sm);
+  padding: 2px 15px;
+  border-radius: 10px;
+}
+
+.items {
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 80px;
+}
