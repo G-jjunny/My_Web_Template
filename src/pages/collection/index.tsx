@@ -37,7 +37,7 @@ const sampleData: { [key: number]: sampleTypes[] } = {
 const Index = () => {
   const [selectedLine, setSelectedLine] = useState<number>(70);
 
-  /** 마루 사이즈 controller 데이터 */
+  /** 사이즈 controller 데이터 */
   const controllerLines = collectionLine[0].size;
   /** 컨트롤러 클릭 이벤트 함수 */
   const handleSelectLine = (line: number) => {

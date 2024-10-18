@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import styled from "styled-components";
+import Logo from "../../assets/logo.png";
 
 interface HeaderContainerProps {
   isToggle: boolean;
@@ -18,7 +19,7 @@ const Header = () => {
     <HeaderContainer isToggle={isToggle}>
       <HeaderNav>
         <Link to="/">
-          <div className="logo">Logo</div>
+          <img src={Logo} className="logo" alt="logo"></img>
         </Link>
         <div className="nav">
           <li>
@@ -27,7 +28,7 @@ const Header = () => {
           <li>
             <NavLink to="/collection">collection</NavLink>
           </li>
-          <li>FAQ</li>
+          <NavLink to="/about">FAQ</NavLink>
         </div>
         <div className="toggle" onClick={handleMenuToggle}>
           [ Menu ]
@@ -37,8 +38,13 @@ const Header = () => {
       {isToggle && (
         <ToggleMenu>
           <div className="menuContents">
-            <div className="menu1">teststestsafasdnjfs</div>
-            <div className="menu1">teststestsafasdasdfasdfadsfasdfsdnjfs</div>
+            <div className="menu1">
+              Create a beautiful wood floor interior service
+            </div>
+            <div className="menu1">
+              A company specializing in wood flooring that pursues
+              nature-friendly interior space
+            </div>
           </div>
           <div className="menu">
             <ul className="menuNav">
@@ -48,7 +54,9 @@ const Header = () => {
               <li>
                 <NavLink to="/collection">COLLECTION</NavLink>
               </li>
-              <li>FAQ</li>
+              <li>
+                <NavLink to="/about">FAQ</NavLink>
+              </li>
             </ul>
           </div>
         </ToggleMenu>
@@ -91,6 +99,7 @@ const HeaderNav = styled.div`
 
   .logo {
     font-size: var(--font-xl);
+    width: 100px;
   }
 
   .nav {
@@ -103,8 +112,10 @@ const HeaderNav = styled.div`
   }
 
   .toggle {
+    width: 100px;
     font-size: var(--font-md);
     cursor: pointer;
+    text-align: center;
   }
 `;
 
@@ -120,11 +131,13 @@ const ToggleMenu = styled.div`
   /* 왼쪽 */
   .menuContents {
     width: 100%;
+    font-weight: 300;
     padding-bottom: 40px;
     display: flex;
     flex-direction: column;
     gap: 20px;
     justify-content: end;
+    color: var(--primary-dark);
   }
   .menu1 {
     max-width: 200px;
