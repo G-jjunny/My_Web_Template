@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { FaInstagram } from "react-icons/fa";
 // import Logo from "../../assets/logo.png";
 
 const Footer = () => {
@@ -15,7 +16,9 @@ const Footer = () => {
           <RightContents>
             <div className="social">
               <div className="strong">SOCIAL</div>
-              <div>instagram</div>
+              <div className="linkIcon">
+                instagram <FaInstagram className="icon" />
+              </div>
             </div>
             <div className="info">
               <div className="strong">COMPANY</div>
@@ -41,6 +44,7 @@ export default Footer;
 const FooterContainer = styled.div`
   width: 100vw;
   background-color: var(--black);
+  height: calc(100vh - 400px);
 `;
 
 /** 반응형 container */
@@ -54,14 +58,13 @@ const Wrapper = styled.div`
 /** footer 상단 nav영역 */
 const FooterNav = styled.div`
   display: flex;
-  flex-direction: row;
 `;
 
 /** footer 내부 FooterNav 아래 */
 const FooterContents = styled.div`
   display: flex;
   flex-direction: row;
-  padding: 80px 0;
+  padding: 80px 0 40px;
 `;
 
 /** footer 왼쪽 콘텐츠 */
@@ -69,8 +72,7 @@ const LeftLogo = styled.div`
   width: 50%;
   display: flex;
   flex-direction: column;
-  gap: 20px;
-  justify-content: end;
+  justify-content: space-between;
   color: var(--white);
   font-size: var(--font-xs);
   img {
@@ -95,9 +97,17 @@ const RightContents = styled.div`
     font-size: var(--font-sm);
   }
   .social {
+    .linkIcon {
+      align-items: center;
+      align-content: center;
+      display: flex;
+      gap: 5px;
+      cursor: pointer;
+    }
   }
   .info {
     font-size: var(--font-xs);
+    font-weight: 300;
     ul {
       display: flex;
       flex-direction: column;

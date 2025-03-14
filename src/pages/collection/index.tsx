@@ -1,7 +1,6 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import PageTop from "../../components/layout/PageTop";
 import styles from "../../styles/collection/collection.module.scss";
-// import ItemBox from "../../components/collection/ItemBox";
 import collectionLine from "../../assets/json/CollectionLine.json";
 import sample70 from "../../assets/json/sample(70).json";
 import sample90 from "../../assets/json/sample(90).json";
@@ -11,17 +10,7 @@ import sample165 from "../../assets/json/sample(165).json";
 import sample190 from "../../assets/json/sample(190).json";
 import sample240 from "../../assets/json/sample(240).json";
 import ItemBox from "../../components/collection/ItemBox";
-
-/** 불러오는 data의 object 타입 */
-interface sampleTypes {
-  index: string;
-  line: number;
-  name: string;
-  color: string;
-  url: string;
-  des: string;
-  type?: string;
-}
+import sampleTypes from "./sampleTypes";
 
 // 샘플 데이터를 객체로 모아둡니다.
 const sampleData: { [key: number]: sampleTypes[] } = {
@@ -36,7 +25,6 @@ const sampleData: { [key: number]: sampleTypes[] } = {
 
 const Index = () => {
   const [selectedLine, setSelectedLine] = useState<number>(70);
-
   /** 사이즈 controller 데이터 */
   const controllerLines = collectionLine[0].size;
   /** 컨트롤러 클릭 이벤트 함수 */
@@ -69,12 +57,7 @@ const Index = () => {
         </div>
         <div className={styles.items}>
           {sampleData[selectedLine].map((item: sampleTypes, index: number) => (
-            <ItemBox
-              key={index}
-              name={item.name}
-              color={item.color}
-              des={item.des}
-            />
+            <ItemBox key={index} itemdata={item} />
           ))}
         </div>
       </div>

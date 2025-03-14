@@ -1,20 +1,27 @@
 import React from "react";
+import { useDispatch } from "react-redux";
 import styled from "styled-components";
+import { setSelectedItem } from "../../redux/selectedItemSlice";
+import sampleTypes from "../../pages/collection/sampleTypes";
 
-interface itemProps {
-  name: string;
-  color: string;
-  des: string;
+interface ItemBoxProps {
+  itemdata: sampleTypes;
 }
 
-const ItemBox: React.FC<itemProps> = ({ name, color, des }) => {
+const ItemBox: React.FC<ItemBoxProps> = ({ itemdata }) => {
+  const dispatch = useDispatch();
+
+  /** 해당 상품 클릭시 dispatch */
+  const handleClickItem = () => {
+    dispatch(setSelectedItem(itemdata));
+  };
   return (
     <ItemDiv>
       <img src="" alt="" />
       <DesDiv>
-        <div className="itemName">{name}</div>
-        <div className="itemColor">{color}</div>
-        <div className="itemDes">{des}</div>
+        <div className="itemName">{itemdata.name}</div>
+        <div className="itemColor">{itemdata.color}</div>
+        <div className="itemDes">{itemdata.des}</div>
       </DesDiv>
     </ItemDiv>
   );
